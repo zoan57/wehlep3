@@ -1,1 +1,5 @@
+.env
 .babelrc
+.firebaserc
+firebase.json
+node_modules

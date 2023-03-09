@@ -1,4 +1,7 @@
-const path = require("path")
+const path = require("path");
+const { webpack, ProvidePlugin } = require("webpack");
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
     mode: "production",
     entry: "./src/index.js",
@@ -7,14 +10,19 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         publicPath: "/",
     },
+    plugins: [
+        new Dotenv(),
+    ],
+    performance: {
+        hints: false
+    },
     devServer: {
         static: "./dist",
         allowedHosts: ['all'],
         historyApiFallback: true
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"]
             },
@@ -27,7 +35,8 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }]
+            }
+        ]
     }
 
 }
