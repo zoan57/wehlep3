@@ -11,7 +11,7 @@ const root = createRoot(rootElement);
 root.render(
     <BrowserRouter basename="/">
         <Routes>
-            <Route exact path="/" element={<App />}></Route>
+            <Route path="/" element={<App />}></Route>
             <Route path="/list" element={<List />}></Route>
         </Routes>
     </BrowserRouter>

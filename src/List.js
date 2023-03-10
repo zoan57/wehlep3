@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   collection,
   addDoc,
@@ -75,9 +76,9 @@ const List = () => {
         ))}
       </div>
       <br></br>
-      <a href="/" className="button">
+      <Link to="/" className="button">
         返回首頁
-      </a>
+      </Link>
     </div>
   );
 };
